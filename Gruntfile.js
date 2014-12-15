@@ -66,6 +66,14 @@ module.exports = function(grunt) {
           from: "importScripts('openpgp.js')",
           to: "importScripts('openpgp.min.js')"
         }]
+      },
+      preload_dep: {
+        src: ['dist/openpgp.min.js'],
+        dest: ['dist/openpgp.preload_dep.min.js'],
+        replacements: [{
+          from: "*/",
+          to: "*/\nfunction preload_trigger() {\nrequire('crypto');\nrequire('node-localstorage');\n}\n"
+        }]
       }
     },
     uglify: {
@@ -151,7 +159,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-connect');
 
   grunt.registerTask('default', 'Build OpenPGP.js', function() {
-    grunt.task.run(['clean', 'copy:zlib', 'browserify', 'replace', 'uglify', 'npm_pack']);
+    grunt.task.run(['clean', 'copy:zlib', 'browserify:openpgp', 'browserify:worker', 'browserify:worker_min', 'replace:openpgp', 'replace:worker_min', 'uglify', 'npm_pack', 'replace:preload_dep']);
     //TODO jshint is not run because of too many discovered issues, once these are addressed it should autorun
     grunt.log.ok('Before Submitting a Pull Request please also run `grunt jshint`.');
   });
