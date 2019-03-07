@@ -16830,7 +16830,7 @@ module.exports={
   "_args": [
     [
       "github:openpgpjs/elliptic#ad81845f693effa5b4b6d07db2e82112de222f48",
-      "/Users/sunny/Desktop/Protonmail/openpgpjs"
+      "/Users/toberndo/dev/openpgpjs"
     ]
   ],
   "_from": "github:openpgpjs/elliptic#ad81845f693effa5b4b6d07db2e82112de222f48",
@@ -16852,7 +16852,7 @@ module.exports={
   ],
   "_resolved": "github:openpgpjs/elliptic#ad81845f693effa5b4b6d07db2e82112de222f48",
   "_spec": "github:openpgpjs/elliptic#ad81845f693effa5b4b6d07db2e82112de222f48",
-  "_where": "/Users/sunny/Desktop/Protonmail/openpgpjs",
+  "_where": "/Users/toberndo/dev/openpgpjs",
   "author": {
     "name": "Fedor Indutny",
     "email": "fedor@indutny.com"
@@ -27812,7 +27812,7 @@ module.exports={
   "_args": [
     [
       "github:openpgpjs/seek-bzip#3aca608ffedc055a1da1d898ecb244804ef32209",
-      "/Users/sunny/Desktop/Protonmail/openpgpjs"
+      "/Users/toberndo/dev/openpgpjs"
     ]
   ],
   "_from": "github:openpgpjs/seek-bzip#3aca608ffedc055a1da1d898ecb244804ef32209",
@@ -27836,7 +27836,7 @@ module.exports={
   ],
   "_resolved": "github:openpgpjs/seek-bzip#3aca608ffedc055a1da1d898ecb244804ef32209",
   "_spec": "github:openpgpjs/seek-bzip#3aca608ffedc055a1da1d898ecb244804ef32209",
-  "_where": "/Users/sunny/Desktop/Protonmail/openpgpjs",
+  "_where": "/Users/toberndo/dev/openpgpjs",
   "bin": {
     "seek-bunzip": "./bin/seek-bunzip",
     "seek-table": "./bin/seek-bzip-table"
@@ -41122,7 +41122,7 @@ var read = exports.read = function () {
     }, _callee47, this, [[3, 13]]);
   }));
 
-  return function read(_x95) {
+  return function read(_x97) {
     return _ref52.apply(this, arguments);
   };
 }();
@@ -41177,7 +41177,7 @@ var readArmored = exports.readArmored = function () {
     }, _callee48, this, [[0, 9]]);
   }));
 
-  return function readArmored(_x96) {
+  return function readArmored(_x98) {
     return _ref53.apply(this, arguments);
   };
 }();
@@ -41232,7 +41232,7 @@ var generate = exports.generate = function () {
         }, _callee49, this);
       }));
 
-      return function generateSecretKey(_x99) {
+      return function generateSecretKey(_x101) {
         return _ref55.apply(this, arguments);
       };
     }();
@@ -41262,7 +41262,7 @@ var generate = exports.generate = function () {
         }, _callee50, this);
       }));
 
-      return function generateSecretSubkey(_x100) {
+      return function generateSecretSubkey(_x102) {
         return _ref56.apply(this, arguments);
       };
     }();
@@ -41333,7 +41333,7 @@ var generate = exports.generate = function () {
     }, _callee51, this);
   }));
 
-  return function generate(_x97) {
+  return function generate(_x99) {
     return _ref54.apply(this, arguments);
   };
 }();
@@ -41449,7 +41449,7 @@ var reformat = exports.reformat = function () {
     }, _callee52, this, [[2, 9]]);
   }));
 
-  return function reformat(_x101) {
+  return function reformat(_x103) {
     return _ref57.apply(this, arguments);
   };
 }();
@@ -41496,7 +41496,7 @@ var wrapKeyObject = function () {
                 }, _callee53, this);
               }));
 
-              return function (_x106, _x107) {
+              return function (_x108, _x109) {
                 return _ref59.apply(this, arguments);
               };
             }()));
@@ -41590,7 +41590,7 @@ var wrapKeyObject = function () {
                 }, _callee54, this);
               }));
 
-              return function (_x108, _x109) {
+              return function (_x110, _x111) {
                 return _ref60.apply(this, arguments);
               };
             }())).then(function (list) {
@@ -41665,7 +41665,7 @@ var wrapKeyObject = function () {
                 }, _callee55, this);
               }));
 
-              return function (_x110, _x111) {
+              return function (_x112, _x113) {
                 return _ref62.apply(this, arguments);
               };
             }())).then(function (packets) {
@@ -41723,7 +41723,7 @@ var wrapKeyObject = function () {
                 }, _callee56, this);
               }));
 
-              return function (_x112, _x113) {
+              return function (_x114, _x115) {
                 return _ref64.apply(this, arguments);
               };
             }()));
@@ -41739,7 +41739,7 @@ var wrapKeyObject = function () {
     }, _callee57, this);
   }));
 
-  return function wrapKeyObject(_x103, _x104, _x105) {
+  return function wrapKeyObject(_x105, _x106, _x107) {
     return _ref58.apply(this, arguments);
   };
 }();
@@ -41823,7 +41823,7 @@ var isDataRevoked = function () {
                 }, _callee58, this);
               }));
 
-              return function (_x121) {
+              return function (_x123) {
                 return _ref66.apply(this, arguments);
               };
             }()));
@@ -41850,7 +41850,7 @@ var isDataRevoked = function () {
     }, _callee59, this);
   }));
 
-  return function isDataRevoked(_x114, _x115, _x116, _x117, _x118, _x119) {
+  return function isDataRevoked(_x116, _x117, _x118, _x119, _x120, _x121) {
     return _ref65.apply(this, arguments);
   };
 }();
@@ -41919,7 +41919,7 @@ var getPreferredHashAlgo = exports.getPreferredHashAlgo = function () {
     }, _callee60, this);
   }));
 
-  return function getPreferredHashAlgo(_x123, _x124) {
+  return function getPreferredHashAlgo(_x125, _x126) {
     return _ref67.apply(this, arguments);
   };
 }();
@@ -41983,7 +41983,7 @@ var getPreferredAlgo = exports.getPreferredAlgo = function () {
                 }, _callee61, this);
               }));
 
-              return function (_x131, _x132) {
+              return function (_x133, _x134) {
                 return _ref69.apply(this, arguments);
               };
             }()));
@@ -42015,7 +42015,7 @@ var getPreferredAlgo = exports.getPreferredAlgo = function () {
     }, _callee62, this);
   }));
 
-  return function getPreferredAlgo(_x127, _x128) {
+  return function getPreferredAlgo(_x129, _x130) {
     return _ref68.apply(this, arguments);
   };
 }();
@@ -42068,7 +42068,7 @@ var isAeadSupported = exports.isAeadSupported = function () {
                 }, _callee63, this);
               }));
 
-              return function (_x136, _x137) {
+              return function (_x138, _x139) {
                 return _ref72.apply(this, arguments);
               };
             }()));
@@ -42084,7 +42084,7 @@ var isAeadSupported = exports.isAeadSupported = function () {
     }, _callee64, this);
   }));
 
-  return function isAeadSupported(_x133) {
+  return function isAeadSupported(_x135) {
     return _ref71.apply(this, arguments);
   };
 }();
@@ -44094,7 +44094,7 @@ User.prototype.isRevoked = function () {
                         }
 
                         _context33.next = 9;
-                        return that.isRevoked(primaryKey, certificate, signingKey.keyPacket);
+                        return that.isRevoked(primaryKey, certificate, signingKey.keyPacket, date);
 
                       case 9:
                         _context33.t0 = _context33.sent;
@@ -44130,7 +44130,7 @@ User.prototype.isRevoked = function () {
                         return _context33.abrupt('return', _enums2.default.keyStatus.invalid);
 
                       case 19:
-                        if (!certificate.isExpired()) {
+                        if (!certificate.isExpired(date)) {
                           _context33.next = 21;
                           break;
                         }
@@ -44177,12 +44177,14 @@ User.prototype.isRevoked = function () {
  * @param  {module:packet.SecretKey|
  *          module:packet.PublicKey} primaryKey The primary key packet
  * @param  {Array<module:key.Key>}    keys       Array of keys to verify certificate signatures
+ * @param  {Date}                     date        Use the given date instead of the current time
  * @returns {Promise<Array<{keyid: module:type/keyid,
  *                          valid: Boolean}>>}   List of signer's keyid and validity of signature
  * @async
  */
 User.prototype.verifyAllCertifications = function () {
   var _ref39 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee36(primaryKey, keys) {
+    var date = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : new Date();
     var that, certifications;
     return _regenerator2.default.wrap(function _callee36$(_context36) {
       while (1) {
@@ -44198,7 +44200,7 @@ User.prototype.verifyAllCertifications = function () {
                     switch (_context35.prev = _context35.next) {
                       case 0:
                         _context35.next = 2;
-                        return that.verifyCertificate(primaryKey, certification, keys);
+                        return that.verifyCertificate(primaryKey, certification, keys, date);
 
                       case 2:
                         status = _context35.sent;
@@ -44215,7 +44217,7 @@ User.prototype.verifyAllCertifications = function () {
                 }, _callee35, this);
               }));
 
-              return function (_x75) {
+              return function (_x76) {
                 return _ref40.apply(this, arguments);
               };
             }())));
@@ -44238,11 +44240,13 @@ User.prototype.verifyAllCertifications = function () {
  * and validity of self signature
  * @param  {module:packet.SecretKey|
  *          module:packet.PublicKey} primaryKey The primary key packet
+ * @param  {Date}                    date       Use the given date instead of the current time
  * @returns {Promise<module:enums.keyStatus>}    Status of user
  * @async
  */
 User.prototype.verify = function () {
   var _ref41 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee38(primaryKey) {
+    var date = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : new Date();
     var that, dataToVerify, results;
     return _regenerator2.default.wrap(function _callee38$(_context38) {
       while (1) {
@@ -44280,7 +44284,7 @@ User.prototype.verify = function () {
                         }
 
                         _context37.next = 4;
-                        return that.isRevoked(primaryKey, selfCertification);
+                        return that.isRevoked(primaryKey, selfCertification, undefined, date);
 
                       case 4:
                         _context37.t0 = _context37.sent;
@@ -44316,7 +44320,7 @@ User.prototype.verify = function () {
                         return _context37.abrupt('return', _enums2.default.keyStatus.invalid);
 
                       case 14:
-                        if (!selfCertification.isExpired()) {
+                        if (!selfCertification.isExpired(date)) {
                           _context37.next = 16;
                           break;
                         }
@@ -44334,7 +44338,7 @@ User.prototype.verify = function () {
                 }, _callee37, this);
               }));
 
-              return function (_x77) {
+              return function (_x79) {
                 return _ref42.apply(this, arguments);
               };
             }()));
@@ -44354,7 +44358,7 @@ User.prototype.verify = function () {
     }, _callee38, this);
   }));
 
-  return function (_x76) {
+  return function (_x77) {
     return _ref41.apply(this, arguments);
   };
 }();
@@ -44398,7 +44402,7 @@ User.prototype.update = function () {
                 }, _callee39, this);
               }));
 
-              return function (_x80) {
+              return function (_x82) {
                 return _ref44.apply(this, arguments);
               };
             }());
@@ -44421,7 +44425,7 @@ User.prototype.update = function () {
     }, _callee40, this);
   }));
 
-  return function (_x78, _x79) {
+  return function (_x80, _x81) {
     return _ref43.apply(this, arguments);
   };
 }();
@@ -44490,7 +44494,7 @@ SubKey.prototype.isRevoked = function () {
     }, _callee41, this);
   }));
 
-  return function (_x81, _x82, _x83) {
+  return function (_x83, _x84, _x85) {
     return _ref45.apply(this, arguments);
   };
 }();
@@ -44570,7 +44574,7 @@ SubKey.prototype.verify = function () {
     }, _callee42, this);
   }));
 
-  return function (_x85) {
+  return function (_x87) {
     return _ref46.apply(this, arguments);
   };
 }();
@@ -44619,7 +44623,7 @@ SubKey.prototype.getExpirationTime = function () {
     }, _callee43, this);
   }));
 
-  return function (_x87) {
+  return function (_x89) {
     return _ref47.apply(this, arguments);
   };
 }();
@@ -44733,7 +44737,7 @@ SubKey.prototype.update = function () {
                 }, _callee44, this);
               }));
 
-              return function (_x91) {
+              return function (_x93) {
                 return _ref49.apply(this, arguments);
               };
             }());
@@ -44752,7 +44756,7 @@ SubKey.prototype.update = function () {
     }, _callee45, this);
   }));
 
-  return function (_x89, _x90) {
+  return function (_x91, _x92) {
     return _ref48.apply(this, arguments);
   };
 }();
@@ -44810,7 +44814,7 @@ SubKey.prototype.revoke = function () {
     }, _callee46, this);
   }));
 
-  return function (_x92) {
+  return function (_x94) {
     return _ref50.apply(this, arguments);
   };
 }();

@@ -12245,7 +12245,7 @@ module.exports={
   "_args": [
     [
       "github:openpgpjs/elliptic#ad81845f693effa5b4b6d07db2e82112de222f48",
-      "/Users/sunny/Desktop/Protonmail/openpgpjs"
+      "/Users/toberndo/dev/openpgpjs"
     ]
   ],
   "_from": "github:openpgpjs/elliptic#ad81845f693effa5b4b6d07db2e82112de222f48",
@@ -12267,7 +12267,7 @@ module.exports={
   ],
   "_resolved": "github:openpgpjs/elliptic#ad81845f693effa5b4b6d07db2e82112de222f48",
   "_spec": "github:openpgpjs/elliptic#ad81845f693effa5b4b6d07db2e82112de222f48",
-  "_where": "/Users/sunny/Desktop/Protonmail/openpgpjs",
+  "_where": "/Users/toberndo/dev/openpgpjs",
   "author": {
     "name": "Fedor Indutny",
     "email": "fedor@indutny.com"
@@ -22640,7 +22640,7 @@ module.exports={
   "_args": [
     [
       "github:openpgpjs/seek-bzip#3aca608ffedc055a1da1d898ecb244804ef32209",
-      "/Users/sunny/Desktop/Protonmail/openpgpjs"
+      "/Users/toberndo/dev/openpgpjs"
     ]
   ],
   "_from": "github:openpgpjs/seek-bzip#3aca608ffedc055a1da1d898ecb244804ef32209",
@@ -22664,7 +22664,7 @@ module.exports={
   ],
   "_resolved": "github:openpgpjs/seek-bzip#3aca608ffedc055a1da1d898ecb244804ef32209",
   "_spec": "github:openpgpjs/seek-bzip#3aca608ffedc055a1da1d898ecb244804ef32209",
-  "_where": "/Users/sunny/Desktop/Protonmail/openpgpjs",
+  "_where": "/Users/toberndo/dev/openpgpjs",
   "bin": {
     "seek-bunzip": "./bin/seek-bunzip",
     "seek-table": "./bin/seek-bzip-table"
@@ -32722,13 +32722,13 @@ User.prototype.verifyCertificate = async function (primaryKey, certificate, keys
       return;
     }
     const signingKey = await key.getSigningKey(keyid, date);
-    if (certificate.revoked || (await that.isRevoked(primaryKey, certificate, signingKey.keyPacket))) {
+    if (certificate.revoked || (await that.isRevoked(primaryKey, certificate, signingKey.keyPacket, date))) {
       return _enums2.default.keyStatus.revoked;
     }
     if (!(certificate.verified || (await certificate.verify(signingKey.keyPacket, _enums2.default.signature.cert_generic, dataToVerify)))) {
       return _enums2.default.keyStatus.invalid;
     }
-    if (certificate.isExpired()) {
+    if (certificate.isExpired(date)) {
       return _enums2.default.keyStatus.expired;
     }
     return _enums2.default.keyStatus.valid;
@@ -32741,15 +32741,16 @@ User.prototype.verifyCertificate = async function (primaryKey, certificate, keys
  * @param  {module:packet.SecretKey|
  *          module:packet.PublicKey} primaryKey The primary key packet
  * @param  {Array<module:key.Key>}    keys       Array of keys to verify certificate signatures
+ * @param  {Date}                     date        Use the given date instead of the current time
  * @returns {Promise<Array<{keyid: module:type/keyid,
  *                          valid: Boolean}>>}   List of signer's keyid and validity of signature
  * @async
  */
-User.prototype.verifyAllCertifications = async function (primaryKey, keys) {
+User.prototype.verifyAllCertifications = async function (primaryKey, keys, date = new Date()) {
   const that = this;
   const certifications = this.selfCertifications.concat(this.otherCertifications);
   return Promise.all(certifications.map(async function (certification) {
-    const status = await that.verifyCertificate(primaryKey, certification, keys);
+    const status = await that.verifyCertificate(primaryKey, certification, keys, date);
     return {
       keyid: certification.issuerKeyId,
       valid: status === undefined ? null : status === _enums2.default.keyStatus.valid
@@ -32762,10 +32763,11 @@ User.prototype.verifyAllCertifications = async function (primaryKey, keys) {
  * and validity of self signature
  * @param  {module:packet.SecretKey|
  *          module:packet.PublicKey} primaryKey The primary key packet
+ * @param  {Date}                    date       Use the given date instead of the current time
  * @returns {Promise<module:enums.keyStatus>}    Status of user
  * @async
  */
-User.prototype.verify = async function (primaryKey) {
+User.prototype.verify = async function (primaryKey, date = new Date()) {
   if (!this.selfCertifications.length) {
     return _enums2.default.keyStatus.no_self_cert;
   }
@@ -32777,13 +32779,13 @@ User.prototype.verify = async function (primaryKey) {
   };
   // TODO replace when Promise.some or Promise.any are implemented
   const results = [_enums2.default.keyStatus.invalid].concat((await Promise.all(this.selfCertifications.map(async function (selfCertification) {
-    if (selfCertification.revoked || (await that.isRevoked(primaryKey, selfCertification))) {
+    if (selfCertification.revoked || (await that.isRevoked(primaryKey, selfCertification, undefined, date))) {
       return _enums2.default.keyStatus.revoked;
     }
     if (!(selfCertification.verified || (await selfCertification.verify(primaryKey, _enums2.default.signature.cert_generic, dataToVerify)))) {
       return _enums2.default.keyStatus.invalid;
     }
-    if (selfCertification.isExpired()) {
+    if (selfCertification.isExpired(date)) {
       return _enums2.default.keyStatus.expired;
     }
     return _enums2.default.keyStatus.valid;
